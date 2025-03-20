@@ -46,7 +46,7 @@ const HeroSection: React.FC = () => {
           
           <div className={`flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-6 hero-animate transition-all duration-1000 delay-700 transform ${isLoaded ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
             <Link to="/collection">
-              <Button variant="default" size="lg" className="bg-sand hover:bg-sand/90 text-navy font-medium group">
+              <Button variant="secondary" size="lg" className="bg-sand hover:bg-sand/90 text-navy font-medium group">
                 Explore Collection
                 <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
               </Button>
