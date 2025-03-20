@@ -1,16 +1,14 @@
-
 import React, { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Menu, X, ShoppingBag } from "lucide-react";
 import { cn } from "@/lib/utils";
-import Button from "./ui/Button";
+import Button from "@/components/ui/button";
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const location = useLocation();
 
-  // Handle scroll effect
   useEffect(() => {
     const handleScroll = () => {
       if (window.scrollY > 50) {
@@ -24,7 +22,6 @@ const Navbar = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // Close mobile menu when changing routes
   useEffect(() => {
     setIsMobileMenuOpen(false);
   }, [location.pathname]);
@@ -48,7 +45,6 @@ const Navbar = () => {
     >
       <div className="container-padding max-w-7xl mx-auto">
         <div className="flex items-center justify-between">
-          {/* Logo */}
           <Link
             to="/"
             className="text-navy font-serif text-2xl md:text-3xl tracking-wide"
@@ -57,7 +53,6 @@ const Navbar = () => {
             <span className="font-light italic">Luxo</span>
           </Link>
 
-          {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-8">
             {links.map((link) => (
               <Link
@@ -73,14 +68,12 @@ const Navbar = () => {
             ))}
           </nav>
 
-          {/* Shopping Cart Icon */}
           <div className="hidden md:flex items-center">
             <Button variant="ghost" size="icon" aria-label="Shopping Cart">
               <ShoppingBag className="h-5 w-5" />
             </Button>
           </div>
 
-          {/* Mobile Menu Button */}
           <button
             className="md:hidden text-navy p-1"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
@@ -95,7 +88,6 @@ const Navbar = () => {
         </div>
       </div>
 
-      {/* Mobile Menu */}
       {isMobileMenuOpen && (
         <div className="md:hidden absolute top-full left-0 right-0 bg-white shadow-md animate-fade-in">
           <div className="flex flex-col py-4 px-6 space-y-4">

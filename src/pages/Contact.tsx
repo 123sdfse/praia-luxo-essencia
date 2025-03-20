@@ -1,6 +1,6 @@
 
 import React, { useEffect } from "react";
-import Button from "@/components/ui/Button";
+import Button from "@/components/ui/button";
 import { MapPin, Mail, Phone, Clock } from "lucide-react";
 
 const Contact = () => {
